@@ -44,12 +44,14 @@ Eine statische SPA. Drei Auslieferungswege auf dasselbe Build-Artefakt (`dist/`)
 
 ## 5. Umsetzungsschritte
 
-1. Projekt aufsetzen: `npm create vite@latest` (Vanilla + TS), `qr-scanner` installieren.
-2. Scan-Kernlogik in einem eigenen Modul kapseln (Start/Stop, Callback bei Treffer) — hält sie testbar und unabhängig von der UI.
-3. UI mit den drei Zuständen: `idle` → `scanning` → `result`. Fehlerzustände abdecken.
-4. `vite-plugin-pwa` konfigurieren: Name, Icons (192/512 px, inkl. maskable), `display: 'standalone'`, `registerType: 'autoUpdate'`.
-5. Deployment einrichten, HTTPS verifizieren, Installation auf Android und iOS testen.
-6. Tauri hinzufügen (`npm create tauri-app` bzw. Tauri in bestehendes Projekt integrieren), `dist/` als Frontend einbinden.
+- [x] Projekt aufsetzen: `npm create vite@latest` (Vanilla + TS), `qr-scanner` installieren.
+- [x] Scan-Kernlogik in einem eigenen Modul kapseln (Start/Stop, Callback bei Treffer) — hält sie testbar und unabhängig von der UI.
+- [x] UI mit den drei Zuständen: `idle` → `scanning` → `result`. Fehlerzustände abdecken.
+- [x] `vite-plugin-pwa` konfigurieren: Name, Icons (192/512 px, inkl. maskable), `display: 'standalone'`, `registerType: 'autoUpdate'`.
+- [x] Deployment einrichten, HTTPS verifizieren, Installation auf Android und iOS testen.
+- [x] Tauri hinzufügen (`npm create tauri-app` bzw. Tauri in bestehendes Projekt integrieren), `dist/` als Frontend einbinden.
+
+**Status (2026-07-21):** Alle 6 Schritte umgesetzt und verifiziert: Web-Deploy live auf GitHub Pages, PWA-Installation auf Android getestet, Tauri-macOS-Build mit Kamera + Scan verifiziert. Offen: iOS-Safari-Test (auf später verschoben). Release-Build (`.app`/`.dmg`) erzeugt via `npm run tauri:build`.
 
 ## 6. Bekannte Fallstricke (bitte früh testen)
 
